@@ -13,12 +13,12 @@ class Navbar extends React.Component {
                 <Menu pointing>
                     <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
                     <Menu.Item
-                        name='messages'
+                        name='Login'
                         active={activeItem === 'messages'}
                         onClick={this.handleItemClick}
                     />
                     <Menu.Item
-                        name='friends'
+                        name='Signup'
                         active={activeItem === 'friends'}
                         onClick={this.handleItemClick}
                     />

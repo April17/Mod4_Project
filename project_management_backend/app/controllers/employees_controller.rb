@@ -5,6 +5,6 @@ class EmployeesController < ApplicationController
   end
   def show
     employee = Employee.find_by(id: params[:id])
-    render json: employee.to_json(include: [:tasks])
+    render json: employee.to_json(include: [:manager, :tasks])
   end
 end
