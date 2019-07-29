@@ -13,4 +13,10 @@ class Employee < ApplicationRecord
   has_secure_password
 
   validates :username, uniqueness: true
+
+  def coworkers
+    # debugger
+    self.manager.employees - [self]
+  end
+
 end

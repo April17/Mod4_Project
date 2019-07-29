@@ -3,8 +3,14 @@ class EmployeesController < ApplicationController
     employees = Employee.all
     render json: employees
   end
+
   def show
     employee = Employee.find_by(id: params[:id])
-    render json: employee.to_json(include: [:manager, :tasks])
+    # manager = employee.manager
+    # projects = manager.projects
+    # projects = projects.each do |project|
+    #   {project: project.tasks.select{|task| task.employees.include?(employee)}}
+    # end
+    render json: employee, include: "**"
   end
 end
