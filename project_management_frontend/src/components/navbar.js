@@ -1,14 +1,23 @@
 import React from 'react'
-import { Menu, Item, Input } from 'semantic-ui-react'
+import { Input, Menu, Dropdown } from 'semantic-ui-react'
 
 class Navbar extends React.Component {
 
     state = { activeItem: 'home' }
     handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
+    getSearch = (event) => {
+      console.log(event.target.value);
+    }
+
+    getClicked = (event) => {
+      console.log(event);
+    }
+
     render() {
         const { activeItem } = this.state
         return (
+
             <div className="container-navbar">
                 <Menu pointing>
                     <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
@@ -30,6 +39,7 @@ class Navbar extends React.Component {
                 </Menu>
 
             </div>
+
         )
     }
 }
