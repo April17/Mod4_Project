@@ -1,3 +1,3 @@
 class EmployeeTaskSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :hours_done
 end

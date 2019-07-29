@@ -6,18 +6,15 @@ class EmployeesController < ApplicationController
 
   def show
     employee = Employee.find_by(id: params[:id])
-<<<<<<< HEAD
     tasks = employee.tasks
     manager = employee.manager
     coworkers = manager.employees.select{|coworker| coworker.id != employee.id}
-    render json: {employee: employee, manager: manager, coworkers: coworkers, tasks: tasks, }
-=======
+    # render json: {employee: employee, manager: manager, coworkers: coworkers, tasks: tasks, }
     # manager = employee.manager
     # projects = manager.projects
     # projects = projects.each do |project|
     #   {project: project.tasks.select{|task| task.employees.include?(employee)}}
     # end
     render json: employee, include: "**"
->>>>>>> 27273a4179cc1bd5f25612322f84ee8f1959d953
   end
 end
