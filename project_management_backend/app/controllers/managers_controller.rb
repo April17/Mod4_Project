@@ -5,6 +5,6 @@ class ManagersController < ApplicationController
   end
   def show
     manager = Manager.find_by(id: params[:id])
-    render json: manager.to_json(include: [:projects, :employees])
+    render json: manager, include: "**"
   end
 end

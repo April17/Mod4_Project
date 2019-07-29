@@ -15,6 +15,6 @@ class EmployeesController < ApplicationController
     # projects = projects.each do |project|
     #   {project: project.tasks.select{|task| task.employees.include?(employee)}}
     # end
-    render json: employee, include: "**"
+    render json: employee, include: "**", employee_id: employee.id
   end
 end

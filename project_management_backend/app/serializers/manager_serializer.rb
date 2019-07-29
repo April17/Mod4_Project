@@ -1,4 +1,4 @@
 class ManagerSerializer < ActiveModel::Serializer
-  attributes :id, :name, :employees
+  attributes :id, :name, :quote, :employees
   has_many :projects
 end
