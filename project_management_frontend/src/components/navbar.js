@@ -9,7 +9,7 @@ class Navbar extends React.Component {
     render() {
         const { activeItem } = this.state
         return (
-            <div>
+            <div className="container-navbar">
                 <Menu pointing>
                     <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
                     <Menu.Item

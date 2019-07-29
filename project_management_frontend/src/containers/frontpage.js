@@ -6,7 +6,6 @@ class Frontpage extends React.Component {
 
 
     render() {
-       
         return (
             <div>
                 <Navbar />
