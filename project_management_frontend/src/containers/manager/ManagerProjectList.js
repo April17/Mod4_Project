@@ -1,15 +1,15 @@
 import React from 'react'
-import Project from '../containers/project';
+import ManagerProject from './ManagerProject';
 
 
 class ManagerProjectList extends React.Component {
 
     render() {
-        console.log(this.props.data.username);
+        console.log(this.props.data.projects);
         
         return (
             <div className="container-projects">
-                <Project username={this.props.data.username} projects={this.props.data.projects}/>
+                <ManagerProject username={this.props.data.username} managerProjects={this.props.data.projects}/>
             </div>
         )
     }

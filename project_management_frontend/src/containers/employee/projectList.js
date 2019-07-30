@@ -1,5 +1,5 @@
 import React from 'react'
-import Project from '../containers/project';
+import Project from './project';
 
 
 class ProjectList extends React.Component {
@@ -9,7 +9,7 @@ class ProjectList extends React.Component {
         
         return (
             <div className="container-projects">
-                <Project projects={this.props.data.manager.projects}/>
+                <Project username={this.props.data.username} employeeProjects={this.props.data.manager.projects}/>
             </div>
         )
     }

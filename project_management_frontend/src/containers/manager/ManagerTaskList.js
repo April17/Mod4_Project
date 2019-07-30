@@ -1,15 +1,22 @@
 import React from 'react'
-import Task from '../containers/task';
+import ManagerTask from '../../components/ManagerTask';
 
-class TaskList extends React.Component {
+class ManagerTaskList extends React.Component {
+
+    
+    // checkIfManager = (username) => {
+    //     return username.substring(0, 3) === "mag" ? true : false
+    // }
 
     mapOverTasks = () => {
-        return this.props.data.map((task) => {
-            return <Task task={task}/>
+        return this.props.data.tasks.map((task) => {
+            return <ManagerTask task={task}/>
         })
+        
     }
     
     render() {
+        // this.checkIfManager(this.props.username)
         console.log(this.props);
 
         return (
@@ -22,7 +29,7 @@ class TaskList extends React.Component {
                         <th>Total Working Hours</th>
                         <th>Total Work Done</th>
                         <th>Task Progress</th>
-                        <th>Update Progress</th>
+                        
                         </tr>
                     </thead>
                         {this.mapOverTasks()}
@@ -32,4 +39,4 @@ class TaskList extends React.Component {
     }
 }
 
-export default TaskList
+export default ManagerTaskList

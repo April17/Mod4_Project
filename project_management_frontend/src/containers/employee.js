@@ -1,8 +1,8 @@
 import React from 'react'
 import Navbar from '../components/navbar';
-import Sidebar from '../containers/sidebar';
+import Sidebar from './employee/sidebar';
 import  '../style/employee.css'
-import ProjectList from './projectList';
+import ProjectList from './employee/projectList';
 
 class Employee extends React.Component {
 

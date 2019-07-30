@@ -25,8 +25,6 @@ class Task extends React.Component {
         //         total_working_done: this.state.progress
         //     )
         // })
-        
-        
     }
 
     singleTask() {
