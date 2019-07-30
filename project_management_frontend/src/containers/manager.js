@@ -1,8 +1,8 @@
 import React from 'react'
 import Navbar from '../components/navbar';
-import ManagerSidebar from '../containers/ManagerSidebar';
+import ManagerSidebar from './manager/ManagerSidebar';
 import  '../style/employee.css'
-import ManagerProjectList from './ManagerProjectList';
+import ManagerProjectList from './manager/ManagerProjectList';
 
 class Manager extends React.Component {
 

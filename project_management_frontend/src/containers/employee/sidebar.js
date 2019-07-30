@@ -1,6 +1,7 @@
 import React from 'react'
-import Navbar from '../components/navbar';
-import CooworkerList from '../components/cooworkerlist';
+import { Menu, Item, Input } from 'semantic-ui-react'
+import Navbar from '../../components/navbar';
+import CooworkerList from '../../components/cooworkerlist';
 
 class Sidebar extends React.Component {
     render() {

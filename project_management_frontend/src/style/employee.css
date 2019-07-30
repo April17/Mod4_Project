@@ -146,31 +146,21 @@ form.progress-form > input[type=number]:nth-child(1)  {
     margin-right: 10px;
 }
 
+/* Manager CSS */
 
-
-/* Table */
-
-/* .Rtable {
-    display: flex;
-    flex: 1;
+.create-project-button {
+    width: 100%;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
 }
 
-.Rtable-cell-1 {
-    order: 1;
-    flex: 1;
+.create-project-button:hover {
+    background-color: #4CAF50;
+    color: white;
 }
 
-.Rtable-cell-2 {
-    order: 2;
-    flex: 1;
+.create-button-div {
+    margin: 0;
+    padding: 0;
 }
-
-.Rtable-cell-3 {
-    order: 3;
-    flex: 1;
-}
-
-.Rtable-cell-4 {
-    order: 4;
-    flex: 1;
-} */
