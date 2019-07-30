@@ -5,6 +5,7 @@ import './App.css';
 import Frontpage from './containers/frontpage';
 import Login from './components/login';
 import Employee from './containers/employee';
+import Manager from './containers/manager';
 
 
 
@@ -12,7 +13,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Employee />
+        {/* <Login /> */}
+        <Manager />
       </div>
     );
   }

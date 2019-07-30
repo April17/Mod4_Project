@@ -2,7 +2,16 @@ import React from 'react'
 import Task from '../containers/task';
 
 class TaskList extends React.Component {
+
+    mapOverTasks = () => {
+        return this.props.data.map((task) => {
+            return <Task task={task}/>
+        })
+    }
+    
     render() {
+        console.log(this.props);
+
         return (
             <div class="tasklist-div">
                 <h3>Tasks </h3>
@@ -16,7 +25,7 @@ class TaskList extends React.Component {
                         <th>Update Progress</th>
                         </tr>
                     </thead>
-                        <Task data={this.props.data}/>
+                        {this.mapOverTasks()}
                 </table>
             </div>
         )

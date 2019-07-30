@@ -15,8 +15,9 @@ class Employee < ApplicationRecord
   validates :username, uniqueness: true
 
   def coworkers
-    # debugger
     self.manager.employees - [self]
   end
+
+
 
 end
