@@ -1,8 +1,6 @@
 import React from 'react'
-import { Grid, Image, Divider, Header } from 'semantic-ui-react'
 import Navbar from '../components/navbar';
 import Sidebar from '../containers/sidebar';
-import TaskList from '../containers/tasklist';
 import  '../style/employee.css'
 import ProjectList from './projectList';
 
@@ -22,19 +20,17 @@ class Employee extends React.Component {
     }
 
     render() {
-        // console.log(this.state.employee_data.employee)
+        console.log(this.state.employee_data)
         if (!this.state.loaded ) {
             return "loading"
         } 
 
-
         return (
             <div className="employee-container">
-                <Navbar />
+                    <Navbar />
                 <div className="container-employee-sidebar-project">
-                
-                <Sidebar />
-                <ProjectList />
+                    <Sidebar employee={this.state.employee_data}/>
+                    <ProjectList data={this.state.employee_data}/>
                 </div>
             </div>
         )

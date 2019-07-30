@@ -4,19 +4,20 @@ import Navbar from '../components/navbar';
 import CooworkerList from '../components/cooworkerlist';
 
 class Sidebar extends React.Component {
-    render() {
+    render() {        
         return (
             <div className="container-sidebar">
                 <div className="employee-name">
                 <img src="/images/avatar/helen.jpg"></img>
-                    <h3>Employee Name</h3>
-                    <p>username</p>
+                    <h3>{this.props.employee.name}</h3>
+                    <p>{this.props.employee.username}</p>
                 </div>
                 <div className="manager-name">
-                    <h3>Manager Name</h3>
-                    <p>username</p>
+                    <p>Manager:</p>
+                    <h3>{this.props.employee.manager.name}</h3>
+                    
                 </div>
-                <CooworkerList />
+                <CooworkerList coworkers={this.props.employee.coworkers}/>
             </div>
         )
     }

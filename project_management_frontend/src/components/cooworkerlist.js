@@ -1,30 +1,25 @@
 import React from 'react'
-import { Image, List, Header } from 'semantic-ui-react'
 
 
 class CooworkerList extends React.Component {
 
-
+    coworkersMap = () => {
+        return this.props.coworkers.map((coworker) => {
+            return (
+                <div className="cooworkers-info"> 
+                <img src="/images/avatar/helen.jpg"></img>
+                <p>{coworker.name}</p>
+            </div>
+            )
+        })
+    }
 
 
     render() {
-        // if (!this.props.manager.name ) {
-        //     return "loading"
-        // }
-        // console.log(this.props.manager);
-        // debugger
         return (
             <div className="container-cooworker">
                 Coworkers:
-                <div className="cooworkers-info"> 
-                    <img src="/images/avatar/helen.jpg"></img>
-                    <p>Name</p>
-                </div>
-                <div className="cooworkers-info"> 
-                    <img src="/images/avatar/helen.jpg"></img>
-                    <p>Name</p>
-                </div>
-
+                {this.coworkersMap()}
             </div>
         )
     }
