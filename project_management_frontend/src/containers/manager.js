@@ -7,23 +7,23 @@ import ManagerProjectList from './ManagerProjectList';
 class Manager extends React.Component {
 
     state = {
-        manager_data: {},
-        loaded: false
+      manager_data: {},
+      loaded: false
     }
 
     componentDidMount() {
-        fetch('http://localhost:3000/managers/4')
-            .then(res => res.json())
-            .then(data => {
-                this.setState({manager_data: data, loaded: true})
-            })
+      fetch('http://localhost:3000/managers/4')
+        .then(res => res.json())
+        .then(data => {
+            this.setState({manager_data: data, loaded: true})
+        })
     }
 
     render() {
-        console.log(this.state.manager_data)
-        if (!this.state.loaded ) {
-            return "loading"
-        } 
+      console.log(this.state.manager_data)
+      if (!this.state.loaded ) {
+        return "loading"
+      }
 
         return (
             <div className="employee-container">
@@ -38,12 +38,3 @@ class Manager extends React.Component {
 }
 
 export default Manager
-
-
-
-
-
-
-
-
-

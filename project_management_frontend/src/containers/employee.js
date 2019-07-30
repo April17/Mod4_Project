@@ -12,7 +12,7 @@ class Employee extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:3000/employees/1')
+        fetch('http://localhost:3000/employees/4')
             .then(res => res.json())
             .then(data => {
                 this.setState({employee_data: data, loaded: true})
@@ -23,7 +23,7 @@ class Employee extends React.Component {
         console.log(this.state.employee_data)
         if (!this.state.loaded ) {
             return "loading"
-        } 
+        }
 
         return (
             <div className="employee-container">
@@ -67,4 +67,3 @@ export default Employee
                     </Grid.Column>
                 </Grid>
                 <Divider /> */}
-
