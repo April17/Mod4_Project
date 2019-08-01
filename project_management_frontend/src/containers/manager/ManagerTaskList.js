@@ -10,7 +10,7 @@ class ManagerTaskList extends React.Component {
 
     mapOverTasks = () => {
         return this.props.data.tasks.map((task) => {
-            return <ManagerTask task={task}/>
+            return <ManagerTask key={task.id} task={task}/>
         })
 
     }
@@ -18,9 +18,9 @@ class ManagerTaskList extends React.Component {
     render() {
         // this.checkIfManager(this.props.username)
         return (
-            <div class="tasklist-div">
+            <div className="tasklist-div">
                 <h3>Tasks </h3>
-                <table class="ui single fixed striped table">
+                <table className="ui single fixed striped table">
                     <thead>
                         <tr>
                         <th>Task Name</th>
