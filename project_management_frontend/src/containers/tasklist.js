@@ -1,14 +1,12 @@
 import React from 'react'
-import EmployeeTask from '../../components/EmployeeTask';
+import Task from '../containers/task';
 
 class TaskList extends React.Component {
 
-
     mapOverTasks = () => {
-        return this.props.data.filtered_tasks.map((task) => {
-            return <EmployeeTask key={task.id} task={task}/>
+        return this.props.data.map((task) => {
+            return <Task key={task.id} task={task}/>
         })
-
     }
 
     render() {

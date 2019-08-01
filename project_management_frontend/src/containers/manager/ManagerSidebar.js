@@ -22,7 +22,6 @@ class ManagerSidebar extends React.Component {
                 <div className="employee-name">
                 <img alt={this.props.manager.name} src="/images/avatar/helen.jpg"></img>
                     <h3>{this.props.manager.name}</h3>
-                    
                 </div>
                 <div className="create-button-div">
                     <button id="myBtn" className="create-project-button" onClick={this.togglePop}>Create Project</button>

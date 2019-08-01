@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 
 
 class Task extends React.Component {
-    
+
     state = {
         progress: 0
     }
@@ -21,7 +21,7 @@ class Task extends React.Component {
         //     method: 'PATCH',
         //     headers: {'Content-Type': 'application/json'},
         //     body: JSON.stringify(
-        //         
+        //
         //         total_working_done: this.state.progress
         //     )
         // })

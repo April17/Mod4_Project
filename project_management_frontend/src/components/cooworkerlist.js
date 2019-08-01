@@ -9,7 +9,7 @@ class CooworkerList extends React.Component {
                 <div key={coworker.id} className="cooworkers-info"> 
                 <img alt={coworker.name} src="/images/avatar/helen.jpg"></img>
                 <p>{coworker.name}</p>
-            </div>
+              </div>
             )
         })
     }

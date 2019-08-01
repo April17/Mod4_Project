@@ -14,7 +14,7 @@ class Signup extends React.Component{
   handleChange = (event) => {
     this.setState({[event.target.name]: event.target.value});
   }
-  handelSubmit = () => {
+  handelSubmit = (event) => {
     let config = {
       method: "POST",
       headers: {
@@ -25,8 +25,8 @@ class Signup extends React.Component{
     }
     fetch("http://localhost:3000/signup", config)
       .then(rsp => rsp.json())
-      .then(console.log)
-    // event.target.reset()
+      .then(this.props.history.push('/'))
+    event.target.reset()
   }
 
   ifEmployee = () => {

@@ -18,9 +18,9 @@ class ManagerTaskList extends React.Component {
         return this.props.data.tasks.map((task) => {
             return <ManagerTask key={task.id} task={task}/>
         })
-        
+
     }
-    
+
     render() {
         return (
             <div className="tasklist-div">
@@ -32,7 +32,7 @@ class ManagerTaskList extends React.Component {
                         <th>Total Working Hours</th>
                         <th>Total Work Done</th>
                         <th>Task Progress</th>
-                        
+
                         </tr>
                     </thead>
                         {this.mapOverTasks()}
