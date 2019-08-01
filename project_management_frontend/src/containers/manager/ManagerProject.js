@@ -17,10 +17,8 @@ class ManagerProject extends React.Component {
             )
         })
     }
-    
-    render() {
-        console.log(this.props.username);
-        
+
+    render() {        
         return (
             <div className="project-div">
                 {this.mapOverPropject()}

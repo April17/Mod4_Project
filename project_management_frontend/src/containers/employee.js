@@ -6,64 +6,44 @@ import ProjectList from './employee/projectList';
 
 class Employee extends React.Component {
 
-    state = {
-        employee_data: {},
-        loaded: false
+  state = {
+      employee_data: {},
+      loaded: false
+  }
+
+  componentDidMount() {
+    if (!localStorage.token) {
+      this.props.history.push('/')
+    }
+    let config = {
+      headers: {
+        Authorization: localStorage.token
+      }
+    }
+    fetch(`http://localhost:3000/employees/${this.props.match.params.username}`, config)
+      .then(res => res.json())
+      .then(data => {
+        this.setState({employee_data: data, loaded: true})
+      })
+  }
+
+
+  render() {
+
+    if (!this.state.loaded) {
+      return "loading"
     }
 
-    componentDidMount() {
-        fetch('http://localhost:3000/employees/4')
-            .then(res => res.json())
-            .then(data => {
-                this.setState({employee_data: data, loaded: true})
-            })
-    }
-
-    render() {
-        console.log(this.state.employee_data)
-        if (!this.state.loaded ) {
-            return "loading"
-        }
-
-        return (
-            <div className="employee-container">
-                    <Navbar />
-                <div className="container-employee-sidebar-project">
-                    <Sidebar employee={this.state.employee_data}/>
-                    <ProjectList data={this.state.employee_data}/>
-                </div>
-            </div>
-        )
-    }
+    return (
+      <div className="employee-container">
+          <Navbar />
+        <div className="container-employee-sidebar-project">
+          <Sidebar employee={this.state.employee_data}/>
+          <ProjectList data={this.state.employee_data}/>
+        </div>
+      </div>
+    )
+  }
 }
 
 export default Employee
-
-
-
-
-
-
-
-
-
-
-
-{/* <Navbar />
-
-                <Divider />
-                <Header>
-                    {this.state.employee_data.employee.name}
-                </Header>
-                <Grid>
-                    <Grid.Column width={4}>
-                        <Sidebar manager={this.state.employee_data.manager} coworkers={this.state.employee_data.coworkers}/>
-                    </Grid.Column>
-                    <Grid.Column width={9}>
-                        <TaskList employee={this.state.employee_data}/>
-                    </Grid.Column>
-                    <Grid.Column width={3}>
-                        <Image src='https://react.semantic-ui.com/images/wireframe/media-paragraph.png' />
-                    </Grid.Column>
-                </Grid>
-                <Divider /> */}

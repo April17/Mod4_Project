@@ -20,7 +20,7 @@ class Project extends React.Component {
     mapOverPropject = () => {
         return this.props.employeeProjects.map((project) => {
             return(
-                <div className="project-name-div">
+                <div key={project.id} className="project-name-div">
                     <h3>{project.name}</h3>
                     <h5>Progress Report</h5>
                     <progress max="100" value="80"></progress>
@@ -32,8 +32,6 @@ class Project extends React.Component {
     }
 
     render() {
-        console.log(this.props.username);
-
         return (
             <div className="project-div">
                 {this.mapOverPropject()}

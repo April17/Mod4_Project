@@ -5,8 +5,6 @@ import CooworkerList from '../../components/cooworkerlist';
 
 class ManagerSidebar extends React.Component {
     render() {
-        console.log(this.props);
-
         return (
             <div className="container-sidebar">
                 <div className="employee-name">

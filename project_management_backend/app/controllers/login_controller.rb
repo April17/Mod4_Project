@@ -13,4 +13,8 @@ class LoginController < ApplicationController
       render json: { errors: ["Wrong username or password bud. Sorry!"] }, status: :unprocessable_entity
     end
   end
+
+  def profile
+    render json: user_atm
+  end
 end
