@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../components/navbar';
 import ManagerSidebar from './manager/ManagerSidebar';
 import  '../style/employee.css'
+import  '../style/manager.css'
 import ManagerProjectList from './manager/ManagerProjectList';
 
 class Manager extends React.Component {

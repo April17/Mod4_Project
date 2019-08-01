@@ -1,12 +1,18 @@
 import React from 'react'
 import ManagerTask from '../../components/ManagerTask';
+import NewTaskForm from '../manager/NewTaskForm'
 
 class ManagerTaskList extends React.Component {
 
+    state = {
+        seen: false
+    };
 
-    // checkIfManager = (username) => {
-    //     return username.substring(0, 3) === "mag" ? true : false
-    // }
+    togglePop = () => {
+        this.setState({
+            seen: !this.state.seen
+        });
+    };
 
     mapOverTasks = () => {
         return this.props.data.tasks.map((task) => {
@@ -16,7 +22,6 @@ class ManagerTaskList extends React.Component {
     }
 
     render() {
-        // this.checkIfManager(this.props.username)
         return (
             <div className="tasklist-div">
                 <h3>Tasks </h3>
@@ -32,6 +37,10 @@ class ManagerTaskList extends React.Component {
                     </thead>
                         {this.mapOverTasks()}
                 </table>
+                <div>
+                    <button id="myBtn" className="create-project-button create-task-btn" onClick={this.togglePop}>Add Task</button>
+                </div>
+                {this.state.seen ? <NewTaskForm employees={this.props.employees} projectId={this.props.data.id} toggle={this.togglePop} /> : null}
             </div>
         )
     }

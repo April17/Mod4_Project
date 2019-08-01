@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react'
+import React, { Fragment } from 'react'
 
 
 class ManagerTask extends React.Component {
@@ -20,8 +20,7 @@ class ManagerTask extends React.Component {
                         <td>{this.props.task.name}</td>
                         <td>{this.props.task.total_working_time}</td>
                         <td>{this.props.task.total_working_done}</td>
-                        <td><progress max="100" value="80"></progress></td>
-                        
+                        <td><progress max="100" value="10"></progress></td>
                     </tr>
                 </tbody>
             )

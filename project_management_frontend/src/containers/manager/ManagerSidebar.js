@@ -1,19 +1,32 @@
 import React from 'react'
-import { Menu, Item, Input } from 'semantic-ui-react'
-import Navbar from '../../components/navbar';
 import CooworkerList from '../../components/cooworkerlist';
+import NewProjectForm from './NewProjectForm'
 
 class ManagerSidebar extends React.Component {
-    render() {
+
+    state = {
+        seen: false
+    };
+
+    togglePop = () => {
+        this.setState({
+            seen: !this.state.seen
+        });
+    };
+
+    render() {  
+        console.log(this.props.manager.id);
+
         return (
             <div className="container-sidebar">
                 <div className="employee-name">
-                <img src="/images/avatar/helen.jpg"></img>
+                <img alt={this.props.manager.name} src="/images/avatar/helen.jpg"></img>
                     <h3>{this.props.manager.name}</h3>
                 </div>
                 <div className="create-button-div">
-                    <button className="create-project-button">Create Project</button>
+                    <button id="myBtn" className="create-project-button" onClick={this.togglePop}>Create Project</button>
                 </div>
+                {this.state.seen ? <NewProjectForm managerId={this.props.manager.id} toggle={this.togglePop} /> : null}
                 <CooworkerList coworkers={this.props.manager.employees}/>
             </div>
         )
