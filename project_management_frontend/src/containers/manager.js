@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../components/navbar';
 import ManagerSidebar from './manager/ManagerSidebar';
 import  '../style/employee.css'
+import  '../style/manager.css'
 import ManagerProjectList from './manager/ManagerProjectList';
 
 class Manager extends React.Component {
@@ -19,8 +20,9 @@ class Manager extends React.Component {
             })
     }
 
+
     render() {
-        console.log(this.state.manager_data)
+        console.log(this.state.manager_data.employees)
         if (!this.state.loaded ) {
             return "loading"
         } 

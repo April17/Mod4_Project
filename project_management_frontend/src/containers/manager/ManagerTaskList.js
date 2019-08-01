@@ -1,28 +1,31 @@
 import React from 'react'
 import ManagerTask from '../../components/ManagerTask';
+import NewTaskForm from '../manager/NewTaskForm'
 
 class ManagerTaskList extends React.Component {
 
-    
-    // checkIfManager = (username) => {
-    //     return username.substring(0, 3) === "mag" ? true : false
-    // }
+    state = {
+        seen: false
+    };
+
+    togglePop = () => {
+        this.setState({
+            seen: !this.state.seen
+        });
+    };
 
     mapOverTasks = () => {
         return this.props.data.tasks.map((task) => {
-            return <ManagerTask task={task}/>
+            return <ManagerTask key={task.id} task={task}/>
         })
         
     }
     
     render() {
-        // this.checkIfManager(this.props.username)
-        console.log(this.props);
-
         return (
-            <div class="tasklist-div">
+            <div className="tasklist-div">
                 <h3>Tasks </h3>
-                <table class="ui single fixed striped table">
+                <table className="ui single fixed striped table">
                     <thead>
                         <tr>
                         <th>Task Name</th>
@@ -34,6 +37,10 @@ class ManagerTaskList extends React.Component {
                     </thead>
                         {this.mapOverTasks()}
                 </table>
+                <div>
+                    <button id="myBtn" className="create-project-button create-task-btn" onClick={this.togglePop}>Add Task</button>
+                </div>
+                {this.state.seen ? <NewTaskForm employees={this.props.employees} projectId={this.props.data.id} toggle={this.togglePop} /> : null}
             </div>
         )
     }

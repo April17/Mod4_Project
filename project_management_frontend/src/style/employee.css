@@ -35,7 +35,7 @@
     
     
     .container-employee-sidebar-project div {
-        border:1px #ccc solid;
+        /* border:1px #ccc solid; */
         padding:0.7vw;
     }
 /* } */
@@ -146,21 +146,3 @@ form.progress-form > input[type=number]:nth-child(1)  {
     margin-right: 10px;
 }
 
-/* Manager CSS */
-
-.create-project-button {
-    width: 100%;
-    background-color: white; 
-    color: black; 
-    border: 2px solid #4CAF50;
-}
-
-.create-project-button:hover {
-    background-color: #4CAF50;
-    color: white;
-}
-
-.create-button-div {
-    margin: 0;
-    padding: 0;
-}

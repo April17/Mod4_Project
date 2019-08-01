@@ -38,33 +38,3 @@ class Employee extends React.Component {
 }
 
 export default Employee
-
-
-
-
-
-
-
-
-
-
-
-{/* <Navbar />
-
-                <Divider />
-                <Header>
-                    {this.state.employee_data.employee.name}
-                </Header>
-                <Grid>
-                    <Grid.Column width={4}>
-                        <Sidebar manager={this.state.employee_data.manager} coworkers={this.state.employee_data.coworkers}/>
-                    </Grid.Column>
-                    <Grid.Column width={9}>
-                        <TaskList employee={this.state.employee_data}/>
-                    </Grid.Column>
-                    <Grid.Column width={3}>
-                        <Image src='https://react.semantic-ui.com/images/wireframe/media-paragraph.png' />
-                    </Grid.Column>
-                </Grid>
-                <Divider /> */}
-
