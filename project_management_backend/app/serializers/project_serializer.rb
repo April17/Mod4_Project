@@ -1,5 +1,5 @@
 class ProjectSerializer < ActiveModel::Serializer
-  attributes :id, :name, :description, :filtered_tasks
+  attributes :id, :name, :description, :filtered_tasks, :project_total_worktime, :project_total_done
   has_many :tasks
 
   def filtered_tasks
@@ -7,6 +7,6 @@ class ProjectSerializer < ActiveModel::Serializer
     self.object.tasks.select{|task| task.employees.include?(current_employee)}
   end
 
-  
+
 
 end

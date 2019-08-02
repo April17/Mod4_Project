@@ -28,7 +28,7 @@ class Task extends React.Component {
                         <td>{this.props.task.total_working_time}</td>
                         <td>{this.props.task.total_working_done}</td>
                         <td>{this.props.employeeTask.hours_done}</td>
-                        <td><progress max="100" value="80"></progress></td>
+                        <td><progress max={this.props.task.total_working_time} value={this.props.task.total_working_done}></progress></td>
                         <td>
                             <form className="progress-form" onSubmit={this.handleSubmit}>
                                 <input type="number" name="progress" value={this.state.hours_done} onChange={this.handleChange}></input>
@@ -41,7 +41,6 @@ class Task extends React.Component {
     }
 
     render() {
-      console.log(this.props);
         return (
             <Fragment >
                 {this.singleTask()}
