@@ -12,7 +12,7 @@ class ManagerProject extends React.Component {
                     <h5>Progress Report</h5>
                     <progress max="100" value="80"></progress>
                     <p>{project.description}</p>
-                    <ManagerTasklist employees={this.props.employees} username={this.props.username} data={project}/>
+                    <ManagerTasklist getNewTask={this.props.getNewTask} employees={this.props.employees} username={this.props.username} data={project}/>
                 </div>
             )
         })

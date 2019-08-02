@@ -3,7 +3,7 @@ import './App.css';
 import Employee from './containers/employee';
 import Manager from './containers/manager';
 import Frontpage from './containers/frontpage';
-import Login from './components/login';
+// import Login from './components/login';
 import Signup from './components/signup'
 import FourOFour from './components/fourOfour';
 import { Switch, Route } from 'react-router-dom'
@@ -15,7 +15,6 @@ class App extends React.Component {
     username: ""
   }
   componentDidMount() {
-    console.log(this.props);
     if (localStorage.token) {
       let config = {
         headers: {

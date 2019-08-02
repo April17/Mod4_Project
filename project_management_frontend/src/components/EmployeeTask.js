@@ -4,27 +4,20 @@ import React, { Fragment } from 'react'
 class Task extends React.Component {
 
     state = {
-        progress: 0
+        id: this.props.task.id,
+        hours_done: 0
     }
 
     handleChange = (event) => {
+      // console.log(event.target.value);
         this.setState({
-            progress: event.target.value
+            hours_done: event.target.value
         })
     }
 
     handleSubmit = event => {
         event.preventDefault()
-        // let id = this.props.task.id
-        // console.log(hoursDone);
-        // fetch(`http://localhost:3000/tasks/${id}`, {
-        //     method: 'PATCH',
-        //     headers: {'Content-Type': 'application/json'},
-        //     body: JSON.stringify(
-        //
-        //         total_working_done: this.state.progress
-        //     )
-        // })
+        this.props.updateTask(this.state)
     }
 
     singleTask() {
@@ -37,7 +30,7 @@ class Task extends React.Component {
                         <td><progress max="100" value="80"></progress></td>
                         <td>
                             <form className="progress-form" onSubmit={this.handleSubmit}>
-                                <input type="number" name="progress" value={this.state.progress} onChange={this.handleChange}></input>
+                                <input type="number" name="progress" value={this.state.hours_done} onChange={this.handleChange}></input>
                                 <input type="submit" value="Update"></input>
                             </form>
                         </td>
@@ -47,6 +40,7 @@ class Task extends React.Component {
     }
 
     render() {
+      // console.log(this.state.progress);
         return (
             <Fragment >
                 {this.singleTask()}

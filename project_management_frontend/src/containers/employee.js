@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../components/navbar';
+// import Navbar from '../components/navbar';
 import Sidebar from './employee/sidebar';
 import  '../style/employee.css'
 import ProjectList from './employee/projectList';
@@ -27,19 +27,35 @@ class Employee extends React.Component {
       })
   }
 
+  updateTask = (updatedData) => {
+    let config = {
+      method: "PATCH",
+      headers: {
+        'Content-Type':'application/json',
+        Authorization: localStorage.token,
+        'Accept':'application/json'
+      },
+      body: JSON.stringify(updatedData)
+    }
+    fetch(`http://localhost:3000/employee_tasks/${updatedData.id}`, config)
+      .then(rsp => rsp.json())
+      .then(data => this.setState({
+        employee_data: data
+      }))
+  }
+
 
   render() {
 
     if (!this.state.loaded) {
       return "loading"
     }
-
+    console.log(this.state.employee_data);
     return (
       <div className="employee-container">
-          <Navbar />
         <div className="container-employee-sidebar-project">
           <Sidebar employee={this.state.employee_data}/>
-          <ProjectList data={this.state.employee_data}/>
+          <ProjectList updateTask={this.updateTask} data={this.state.employee_data}/>
         </div>
       </div>
     )

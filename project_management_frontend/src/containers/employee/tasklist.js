@@ -6,7 +6,7 @@ class TaskList extends React.Component {
 
     mapOverTasks = () => {
         return this.props.data.filtered_tasks.map((task) => {
-            return <EmployeeTask key={task.id} task={task}/>
+            return <EmployeeTask updateTask={this.props.updateTask} key={task.id} task={task}/>
         })
 
     }

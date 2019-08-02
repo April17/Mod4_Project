@@ -5,7 +5,8 @@ import NewTaskForm from '../manager/NewTaskForm'
 class ManagerTaskList extends React.Component {
 
     state = {
-        seen: false
+        seen: false,
+        tasks: []
     };
 
     togglePop = () => {
@@ -20,6 +21,8 @@ class ManagerTaskList extends React.Component {
         })
 
     }
+
+
 
     render() {
         return (
@@ -40,7 +43,7 @@ class ManagerTaskList extends React.Component {
                 <div>
                     <button id="myBtn" className="create-project-button create-task-btn" onClick={this.togglePop}>Add Task</button>
                 </div>
-                {this.state.seen ? <NewTaskForm employees={this.props.employees} projectId={this.props.data.id} toggle={this.togglePop} /> : null}
+                {this.state.seen ? <NewTaskForm getNewTask={this.props.getNewTask} employees={this.props.employees} projectId={this.props.data.id} toggle={this.togglePop} /> : null}
             </div>
         )
     }

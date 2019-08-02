@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import Checkbox from '../../components/checkbox'
 
 export default class NewTaskForm extends Component {
-  
+
     state = {
         name: "",
         total_working_time: "",
         checked_employee: [],
-        propject_id: this.props.projectId
+        project_id: this.props.projectId
     }
 
     addEmployee = (employee_id) => {
@@ -34,13 +34,9 @@ export default class NewTaskForm extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        // fetch('http://localhost:3000/tasks', {
-        //     method: 'POST',
-        //     headers {}
-        // })
-        console.log(this.state)
+        this.props.getNewTask(this.state)
     }
-    
+
     checkbox = () => {
         return this.props.employees.map((employee) => {
             return(
@@ -49,10 +45,9 @@ export default class NewTaskForm extends Component {
         })
 
     }
-    
-        
+
+
     render() {
-            console.log(this.state.checked_employee)
         return (
             <div id="myModal" className="modal">
                 <div className="modal-content">
@@ -61,7 +56,7 @@ export default class NewTaskForm extends Component {
                         <span className="close" onClick={this.handleClick}>&times;</span>
                         <h2>Create Task</h2>
                     </div>
-                    <div class="modal-body">
+                    <div className="modal-body">
                         <div className="form-div">
                             <form onSubmit={this.handleSubmit}>
                                 <input type="text" value={this.state.name} name="name"  onChange={this.handleChange} placeholder="Task name.." />
@@ -71,7 +66,7 @@ export default class NewTaskForm extends Component {
                             </form>
                         </div>
                     </div>
-                    <div class="modal-footer">
+                    <div className="modal-footer">
                     </div>
                 </div>
         </div>

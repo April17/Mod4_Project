@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import  '../../style/manager.css'
 
 export default class NewProjectForm extends Component {
-  
+
     state = {
         name: "",
         description: "",
@@ -21,24 +21,19 @@ export default class NewProjectForm extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        // fetch('http://localhost:3000/projects', {
-        //     method: 'POST',
-        //     headers {}
-        // })
+        this.props.getNewProjectInfo(this.state)
     }
 
 render() {
-    console.log(this.state)
-    
   return (
     <div id="myModal" className="modal">
         <div className="modal-content">
 
-            <div class="modal-header">
+            <div className="modal-header">
                 <span className="close" onClick={this.handleClick}>&times;</span>
                 <h2>Create Project</h2>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
                 <div className="form-div">
                     <form onSubmit={this.handleSubmit}>
                         <input type="text" value={this.state.name} name="name"  onChange={this.handleChange} placeholder="Project name.." />
@@ -47,7 +42,7 @@ render() {
                     </form>
                 </div>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
             </div>
         </div>
    </div>

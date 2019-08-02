@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../components/navbar';
+// import Navbar from '../components/navbar';
 import ManagerSidebar from './manager/ManagerSidebar';
 import  '../style/employee.css'
 import  '../style/manager.css'
@@ -28,18 +28,45 @@ class Manager extends React.Component {
           this.setState({manager_data: data, loaded: true})
       })
   }
-
+  getNewTask = (newTaskData) => {
+    let config = {
+      method: "POST",
+      headers: {
+        'Content-Type':'application/json',
+        'Accept':'application/json'
+      },
+      body: JSON.stringify(newTaskData)
+    }
+    fetch("http://localhost:3000/tasks", config)
+      .then(rsp => rsp.json())
+      .then(data => this.setState({
+        manager_data: data
+      }))
+  }
+  getNewProjectInfo = (newProjectData) => {
+    let config = {
+      method: "POST",
+      headers: {
+        'Content-Type':'application/json',
+        'Accept':'application/json'
+      },
+      body: JSON.stringify(newProjectData)
+    }
+    fetch("http://localhost:3000/projects", config)
+      .then(rsp => rsp.json())
+      .then(data => this.setState({
+        manager_data: data
+      }))
+  }
   render() {
     if (!this.state.loaded) {
       return "loading"
     }
-
     return (
       <div className="employee-container">
-          <Navbar />
         <div className="container-employee-sidebar-project">
-          <ManagerSidebar manager={this.state.manager_data}/>
-          <ManagerProjectList data={this.state.manager_data}/>
+          <ManagerSidebar getNewProjectInfo={this.getNewProjectInfo} manager={this.state.manager_data}/>
+          <ManagerProjectList getNewTask={this.getNewTask} data={this.state.manager_data}/>
         </div>
       </div>
     )

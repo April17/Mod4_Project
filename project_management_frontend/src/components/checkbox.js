@@ -11,7 +11,7 @@ class Checkbox extends React.Component {
             id: this.state.id,
             checked: !this.state.checked
         }, this.updateForm)
-        
+
     }
 
     updateForm = () => {
@@ -24,11 +24,10 @@ class Checkbox extends React.Component {
 
 
     render() {
-        console.log(this.state.checked);
         return (
-            <div key={this.props.employee.id} >
-                <lable>{this.props.employee.name}</lable>
-                <input type="checkbox" checked={this.state.checked} value={this.props.employee.id} name={this.props.employee.name}  onChange={this.handleChange}></input>
+            <div>
+                <input type="checkbox" checked={this.state.checked} value={this.props.employee.id} id={this.props.employee.name} name={this.props.employee.name}  onChange={this.handleChange}></input>
+                <label htmlFor={this.props.employee.name}>{this.props.employee.name}</label>
             </div>
         )
     }

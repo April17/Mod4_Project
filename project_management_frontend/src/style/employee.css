@@ -6,7 +6,7 @@
         justify-content: center;
         align-items: center;
     }
-    
+
     .container-sidebar div {
         /* align-items: stretch;
         justify-content: center; */
@@ -23,7 +23,7 @@
     .container-projects {
         flex: 3;
     }
-    
+
     .container-sidebar {
         flex: 1;
     }
@@ -32,8 +32,8 @@
         width: 70%;
         margin-top: 6vw;
     }
-    
-    
+
+
     .container-employee-sidebar-project div {
         /* border:1px #ccc solid; */
         padding:0.7vw;
@@ -87,7 +87,7 @@ div.project-name-div {
 
 .project-name-div p {
     margin-top: 20px;
-    
+
     justify-content:flex-left;
     text-align: left;
 }
@@ -142,7 +142,5 @@ div.tasklist-div h3 {
 }
 
 form.progress-form > input[type=number]:nth-child(1)  {
-    width: 25%;
     margin-right: 10px;
 }
-

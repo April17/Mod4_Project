@@ -1,6 +1,5 @@
 import React from 'react'
-import { Button, Form, Grid, Header, Message, Segment, Checkbox } from 'semantic-ui-react'
-import Navbar from '../components/navbar'
+import { Button, Form, Header, Segment } from 'semantic-ui-react'
 
 class Login extends React.Component {
 
