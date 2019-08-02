@@ -32,6 +32,7 @@ class Employee extends React.Component {
       method: "PATCH",
       headers: {
         'Content-Type':'application/json',
+        'Authorization': localStorage.token,
         'Accept':'application/json'
       },
       body: JSON.stringify(updatedData)
