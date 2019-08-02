@@ -50,7 +50,6 @@ class Employee extends React.Component {
     if (!this.state.loaded) {
       return "loading"
     }
-    console.log(this.state.employee_data);
     return (
       <div className="employee-container">
         <div className="container-employee-sidebar-project">

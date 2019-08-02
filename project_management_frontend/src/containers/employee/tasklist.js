@@ -6,7 +6,8 @@ class TaskList extends React.Component {
 
     mapOverTasks = () => {
         return this.props.data.filtered_tasks.map((task) => {
-            return <EmployeeTask updateTask={this.props.updateTask} key={task.id} task={task}/>
+            const currentTask = this.props.data.tasks.filter(thisTask => thisTask.id == task.id)
+            return <EmployeeTask updateTask={this.props.updateTask} key={task.id} task={task} employeeTask={currentTask[0].filtered_employeetask}/>
         })
 
     }
@@ -21,6 +22,7 @@ class TaskList extends React.Component {
               <th>Task Name</th>
               <th>Total Working Hours</th>
               <th>Total Work Done</th>
+              <th>Employee Work Done</th>
               <th>Task Progress</th>
               <th>Update Progress</th>
               </tr>
