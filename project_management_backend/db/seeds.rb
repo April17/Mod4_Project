@@ -45,7 +45,7 @@ Task.all.each do |task|
   employees = task.project.manager.employees
   rand(1..employees.length).times do
     employee = employees.sample
-    EmployeeTask.create(hours_done: rand(0..10), task: task, employee: employee)
+    EmployeeTask.create(hours_done: 0, task: task, employee: employee)
     employees = employees - [employee]
   end
 end

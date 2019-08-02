@@ -6,4 +6,7 @@ class ProjectSerializer < ActiveModel::Serializer
     current_employee = Employee.find_by(id: @instance_options[:employee_id])
     self.object.tasks.select{|task| task.employees.include?(current_employee)}
   end
+
+  
+
 end
