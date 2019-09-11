@@ -3,8 +3,13 @@ class ProjectSerializer < ActiveModel::Serializer
   has_many :tasks
 
   def filtered_tasks
-    current_employee = Employee.find_by(id: @instance_options[:employee_id])
-    self.object.tasks.select{|task| task.employees.include?(current_employee)}
+    # debugger
+    if @instance_options[:employee_id]
+      current_employee = Employee.find_by(id: @instance_options[:employee_id])
+      self.object.tasks.select{|task| task.employees.include?(current_employee)}
+    else
+      return nil
+    end
   end
 
 

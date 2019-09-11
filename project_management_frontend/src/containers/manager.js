@@ -25,6 +25,7 @@ class Manager extends React.Component {
     fetch(`http://localhost:3000/managers/${this.props.match.params.username}`, config)
       .then(res => res.json())
       .then(data => {
+        console.log(data);
           this.setState({manager_data: data, loaded: true})
       })
   }
